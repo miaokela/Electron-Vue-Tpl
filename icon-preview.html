@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图标预览</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .icon-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .icon-preview {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 1rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .icon-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .icon-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .icon-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            text-align: left;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .features ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        
+        .features li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .usage-info {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .usage-info h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .command {
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Electron Vue Template 图标预览</h1>
+        
+        <div class="usage-info">
+            <h2>🚀 使用方法</h2>
+            <p>在项目根目录执行以下命令来选择图标风格：</p>
+            <div class="command">npm run select:icon</div>
+            <p>然后选择 1、2 或 3 来切换不同的图标风格</p>
+        </div>
+        
+        <div class="icons-grid">
+            <div class="icon-card">
+                <div class="icon-preview">
+                    <img src="../electron/logo.png" alt="蓝紫渐变图标" />
+                </div>
+                <div class="icon-title">🌌 蓝紫渐变风格</div>
+                <div class="icon-description">现代科技感设计，适合专业商务应用</div>
+                <div class="features">
+                    <ul>
+                        <li>蓝紫渐变的现代科技感</li>
+                        <li>圆角正方形设计</li>
+                        <li>艺术感字母T</li>
+                        <li>专业商务风格</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="icon-card">
+                <div class="icon-preview">
+                    <img src="../electron/logo-orange.png" alt="橙红渐变图标" />
+                </div>
+                <div class="icon-title">🔥 橙红渐变风格</div>
+                <div class="icon-description">活力创意感设计，适合充满活力的创新应用</div>
+                <div class="features">
+                    <ul>
+                        <li>橙红渐变的活力创意感</li>
+                        <li>温暖充满活力的色调</li>
+                        <li>动感十足的视觉效果</li>
+                        <li>创新创意风格</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="icon-card">
+                <div class="icon-preview">
+                    <img src="../electron/logo-green.png" alt="绿青渐变图标" />
+                </div>
+                <div class="icon-title">🌿 绿青渐变风格</div>
+                <div class="icon-description">自然清新感设计，适合环保或健康主题应用</div>
+                <div class="features">
+                    <ul>
+                        <li>绿青渐变的自然清新感</li>
+                        <li>清新自然的色彩搭配</li>
+                        <li>现代环保理念</li>
+                        <li>和谐舒适的视觉体验</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

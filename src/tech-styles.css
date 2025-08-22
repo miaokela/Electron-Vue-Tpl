@@ -1,0 +1,902 @@
+/* 科技感全局样式 */
+
+/* CSS 变量定义 - 浅色科技感主题 */
+:root {
+  --tech-primary: #0066ff;
+  --tech-secondary: #3d8bff;
+  --tech-accent: #ff4081;
+  --tech-success: #00c851;
+  --tech-warning: #ff8f00;
+  --tech-error: #ff4444;
+  --tech-bg-primary: #ffffff;
+  --tech-bg-secondary: #f8f9fa;
+  --tech-bg-tertiary: #e9ecef;
+  --tech-text-primary: #1a1a1a;
+  --tech-text-secondary: #495057;
+  --tech-text-muted: #6c757d;
+  --tech-border: #f1f3f4;
+  --tech-border-active: #0066ff;
+  --tech-shadow: 0 2px 20px rgba(0, 102, 255, 0.15);
+  --tech-glow: 0 0 10px rgba(0, 102, 255, 0.3);
+  --tech-hover-bg: rgba(0, 102, 255, 0.05);
+}
+
+/* 星空背景容器 */
+.starfield-container {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(248, 249, 250, 0.95) 0%, 
+    rgba(255, 255, 255, 0.98) 50%, 
+    rgba(240, 245, 255, 0.95) 100%);
+  overflow: hidden;
+}
+
+/* 移除星空动画效果 */
+/* 原来的 ::before 和 ::after 伪元素已被移除 */
+/* 原来的 @keyframes starfieldFloat 和 shootingStar 已被移除 */
+
+/* 科技感卡片样式 */
+.tech-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0, 102, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(45deg, 
+    rgba(0, 102, 255, 0.2) 0%,
+    rgba(61, 139, 255, 0.1) 25%,
+    rgba(255, 64, 129, 0.1) 50%,
+    rgba(61, 139, 255, 0.1) 75%,
+    rgba(0, 102, 255, 0.2) 100%);
+  background-size: 400% 400%;
+  /* animation: borderGlow 4s ease-in-out infinite; 已移除 */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.03) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tech-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 40px rgba(0, 102, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.tech-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* borderGlow 动画已移除 */
+
+/* Ant Design Card 科技感样式 */
+.ant-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 12px !important;
+  border: 0.5px solid var(--tech-border) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 102, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(45deg, 
+    rgba(0, 102, 255, 0.2) 0%,
+    rgba(61, 139, 255, 0.1) 25%,
+    rgba(255, 64, 129, 0.1) 50%,
+    rgba(61, 139, 255, 0.1) 75%,
+    rgba(0, 102, 255, 0.2) 100%);
+  background-size: 400% 400%;
+  /* animation: borderGlow 4s ease-in-out infinite; 已移除 */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ant-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 102, 255, 0.03) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 12px 40px rgba(0, 102, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.ant-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.ant-card-head {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(0, 102, 255, 0.1) !important;
+}
+
+.ant-card-head-title {
+  color: var(--tech-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.ant-card-body {
+  background: transparent !important;
+  color: var(--tech-text-primary) !important;
+}
+
+/* Ant Design Menu 科技感样式 */
+.ant-menu-dark {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ant-menu-dark .ant-menu-item {
+  color: rgba(255, 255, 255, 0.75) !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  margin: 4px 8px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.ant-menu-dark .ant-menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--tech-primary);
+  border-radius: 0 2px 2px 0;
+  transition: height 0.3s ease;
+}
+
+.ant-menu-dark .ant-menu-item:hover {
+  color: #ffffff !important;
+  background: rgba(0, 102, 255, 0.15) !important;
+  box-shadow: 
+    0 4px 12px rgba(0, 102, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover::before {
+  height: 20px;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.25) 0%, rgba(61, 139, 255, 0.15) 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 102, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected::before {
+  height: 24px;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.6);
+}
+
+.ant-menu-dark .ant-menu-item-icon {
+  color: inherit !important;
+  font-size: 16px !important;
+}
+
+/* 科技感标题样式 */
+h1, h2, h3 {
+  position: relative;
+}
+
+h1[class*="text-2xl"] {
+  background: linear-gradient(135deg, var(--tech-primary) 0%, var(--tech-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 102, 255, 0.1);
+}
+
+/* 科技感按钮增强 */
+button[class*="bg-blue-500"] {
+  background: linear-gradient(135deg, var(--tech-primary) 0%, var(--tech-secondary) 100%) !important;
+  border: 0.5px solid rgba(0, 102, 255, 0.3) !important;
+  box-shadow: 
+    0 4px 12px rgba(0, 102, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+button[class*="bg-blue-500"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+button[class*="bg-blue-500"]:hover::before {
+  left: 100%;
+}
+
+button[class*="bg-blue-500"]:hover {
+  background: linear-gradient(135deg, #0052cc 0%, #0066ff 100%) !important;
+  box-shadow: 
+    0 6px 20px rgba(0, 102, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px);
+}
+
+/* Ant Design Modal 科技感样式 - 浅色主题 */
+.ant-modal-mask {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.ant-modal {
+  color: var(--tech-text-primary) !important;
+}
+
+.ant-modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--tech-shadow) !important;
+  overflow: hidden !important;
+}
+
+.ant-modal-header {
+  background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%) !important;
+  border-bottom: 1px solid var(--tech-border) !important;
+  padding: 16px 24px !important;
+  position: relative !important;
+}
+
+.ant-modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--tech-primary) 50%, transparent 100%);
+}
+
+.ant-modal-title {
+  color: var(--tech-primary) !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-shadow: 0 0 8px rgba(0, 102, 255, 0.3) !important;
+}
+
+.ant-modal-close {
+  color: var(--tech-text-secondary) !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-modal-close:hover {
+  color: var(--tech-primary) !important;
+  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.5)) !important;
+}
+
+.ant-modal-body {
+  padding: 24px !important;
+  background: transparent !important;
+}
+
+.ant-modal-footer {
+  background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%) !important;
+  border-top: 1px solid var(--tech-border) !important;
+  padding: 16px 24px !important;
+  text-align: right !important;
+}
+
+/* Ant Design Form 科技感样式 - 浅色主题 */
+.ant-form-item-label > label {
+  color: var(--tech-text-primary) !important;
+  font-weight: 600 !important;
+  position: relative !important;
+}
+
+.ant-form-item-label > label::before {
+  content: '▶' !important;
+  color: var(--tech-primary) !important;
+  margin-right: 8px !important;
+  font-size: 12px !important;
+}
+
+.ant-form-item-required .ant-form-item-label > label::after {
+  content: '' !important;
+  position: absolute !important;
+  right: -8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 4px !important;
+  height: 4px !important;
+  background: var(--tech-accent) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 6px var(--tech-accent) !important;
+}
+
+/* Ant Design Input 科技感样式 - 浅色主题 */
+.ant-input {
+  background: var(--tech-bg-primary) !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  color: var(--tech-text-primary) !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1.5 !important;
+}
+
+.ant-input::placeholder {
+  color: var(--tech-text-muted) !important;
+}
+
+.ant-input:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.2) !important;
+}
+
+.ant-input:focus {
+  border-color: #40a9ff !important;
+  box-shadow: 0 0 4px rgba(64, 169, 255, 0.2) !important;
+  outline: none !important;
+}
+
+/* 密码框特殊样式 */
+.ant-input-password {
+  background: var(--tech-bg-primary) !important;
+  border: 0.5px solid var(--tech-border) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 8px 12px !important;
+  transition: all 0.3s ease !important;
+  font-size: 14px !important;
+  min-height: 32px !important;
+}
+
+.ant-input-password .ant-input {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+  flex: 1 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.ant-input-password .ant-input::placeholder {
+  color: var(--tech-text-muted) !important;
+}
+
+.ant-input-password .ant-input:hover {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ant-input-password .ant-input:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+.ant-input-password .ant-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.ant-input-password:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.2) !important;
+}
+
+.ant-input-password:focus-within {
+  border-color: var(--tech-primary) !important;
+  box-shadow: var(--tech-glow) !important;
+}
+
+/* 确保密码框在各种状态下都没有双重边框 */
+.ant-input-password.ant-input-affix-wrapper,
+.ant-input-password.ant-input-affix-wrapper.ant-input-password-large,
+.ant-input-password.ant-input-affix-wrapper.ant-input-password-small {
+  background: var(--tech-bg-primary) !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 32px !important;
+  box-shadow: none !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper:not(:focus-within):not(:hover),
+.ant-input-password.ant-input-affix-wrapper.ant-input-password-large:not(:focus-within):not(:hover),
+.ant-input-password.ant-input-affix-wrapper.ant-input-password-small:not(:focus-within):not(:hover) {
+  border: 1px solid #d1d5db !important;
+  box-shadow: none !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.2) !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper:focus-within {
+  border-color: #40a9ff !important;
+  box-shadow: 0 0 4px rgba(64, 169, 255, 0.2) !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper .ant-input {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+  flex: 1 !important;
+  outline: none !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper .ant-input:hover {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper .ant-input:focus {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  outline: none !important;
+}
+
+.ant-input-password.ant-input-affix-wrapper .ant-input::placeholder {
+  color: var(--tech-text-muted) !important;
+}
+
+.ant-input-password-icon {
+  color: var(--tech-text-muted) !important;
+  transition: color 0.3s ease !important;
+  margin-left: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.ant-input-password-icon:hover {
+  color: var(--tech-primary) !important;
+}
+
+/* Ant Design Select 科技感样式 - 浅色主题 */
+.ant-select {
+  width: 100% !important;
+}
+
+/* Select 下拉选择框 - 浅色主题 */
+.ant-select .ant-select-selector {
+  background: var(--tech-bg-primary) !important;
+  border: 0.5px solid var(--tech-border) !important;
+  border-radius: 8px !important;
+  color: var(--tech-text-primary) !important;
+  padding: 8px 12px !important;
+  height: 40px !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ant-select:hover .ant-select-selector {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.2) !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: var(--tech-primary) !important;
+  box-shadow: var(--tech-glow) !important;
+  outline: none !important;
+}
+
+.ant-select-selection-placeholder {
+  color: var(--tech-text-muted) !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.ant-select-selection-item {
+  color: var(--tech-text-primary) !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+/* Select 不同尺寸的垂直居中 */
+.ant-select-large .ant-select-selector {
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ant-select-large .ant-select-selection-item,
+.ant-select-large .ant-select-selection-placeholder {
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+.ant-select-small .ant-select-selector {
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ant-select-small .ant-select-selection-item,
+.ant-select-small .ant-select-selection-placeholder {
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+.ant-select-arrow {
+  color: var(--tech-text-muted) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ant-select:hover .ant-select-arrow {
+  color: var(--tech-primary) !important;
+}
+
+/* 下拉选项 */
+.ant-select-dropdown {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--tech-shadow) !important;
+}
+
+.ant-select-item {
+  color: var(--tech-text-primary) !important;
+  background: transparent !important;
+  border-left: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-select-item:hover {
+  background: var(--tech-hover-bg) !important;
+  border-left-color: var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+}
+
+.ant-select-item-option-selected {
+  background: rgba(0, 102, 255, 0.1) !important;
+  border-left-color: var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+}
+
+/* Ant Design Table 科技感样式 - 浅色主题 */
+.ant-table {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: var(--tech-text-primary) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(10px) !important;
+  border: 0.5px solid var(--tech-border) !important;
+}
+
+.ant-table-thead > tr > th {
+  background: linear-gradient(90deg, rgba(248, 249, 250, 0.9) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(248, 249, 250, 0.9) 100%) !important;
+  border-bottom: 1px solid var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  position: relative !important;
+}
+
+.ant-table-thead > tr > th::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--tech-primary) 50%, transparent 100%);
+}
+
+.ant-table-tbody > tr {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-bottom: 1px solid rgba(0, 102, 255, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-table-tbody > tr:hover {
+  background: var(--tech-hover-bg) !important;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.1) !important;
+  transform: translateX(2px) !important;
+}
+
+.ant-table-tbody > tr > td {
+  color: var(--tech-text-primary) !important;
+  border-bottom: 1px solid rgba(0, 102, 255, 0.05) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/* 空状态样式 */
+.ant-empty {
+  color: var(--tech-text-muted) !important;
+}
+
+.ant-empty-description {
+  color: var(--tech-text-muted) !important;
+}
+
+/* 分页样式 */
+.ant-pagination {
+  color: var(--tech-text-primary) !important;
+}
+
+.ant-pagination-item {
+  background: var(--tech-bg-primary) !important;
+  border: 1px solid var(--tech-border) !important;
+  color: var(--tech-text-primary) !important;
+}
+
+.ant-pagination-item:hover {
+  border-color: var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+}
+
+.ant-pagination-item-active {
+  background: var(--tech-primary) !important;
+  border-color: var(--tech-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Ant Design Button 科技感样式 - 浅色主题 */
+.ant-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 2px solid var(--tech-border-active) !important;
+  border-radius: 8px !important;
+  color: var(--tech-primary) !important;
+  font-weight: 600 !important;
+  padding: 0 16px !important;
+  height: 36px !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-shadow: none !important;
+}
+
+.ant-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.ant-btn:hover::before {
+  left: 100%;
+}
+
+.ant-btn:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow: var(--tech-glow) !important;
+  transform: translateY(-1px) !important;
+  color: var(--tech-primary) !important;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+.ant-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 0 15px rgba(0, 102, 255, 0.4) !important;
+}
+
+/* Primary Button */
+.ant-btn-primary {
+  background: linear-gradient(135deg, var(--tech-primary) 0%, var(--tech-secondary) 100%) !important;
+  border: 0.5px solid var(--tech-primary) !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #0052cc 0%, #0066ff 100%) !important;
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Danger Button */
+.ant-btn-dangerous {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 0.5px solid var(--tech-error) !important;
+  color: var(--tech-error) !important;
+  text-shadow: none !important;
+}
+
+.ant-btn-dangerous:hover {
+  border-color: var(--tech-error) !important;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.3) !important;
+  color: var(--tech-error) !important;
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%) !important;
+}
+
+/* 右键菜单科技感样式 - 浅色主题 */
+.tech-context-menu {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--tech-shadow) !important;
+  padding: 4px 0 !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.tech-context-menu-item {
+  color: var(--tech-text-primary) !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  border-left: 2px solid transparent !important;
+}
+
+.tech-context-menu-item:hover {
+  background: var(--tech-hover-bg) !important;
+  border-left-color: var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+}
+
+.tech-context-menu-item.danger:hover {
+  background: rgba(255, 68, 68, 0.05) !important;
+  border-left-color: var(--tech-error) !important;
+  color: var(--tech-error) !important;
+}
+
+/* 确认对话框科技感样式 - 浅色主题 */
+.tech-confirm-modal .ant-modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 1px solid var(--tech-error) !important;
+  box-shadow: 0 0 30px rgba(255, 68, 68, 0.2) !important;
+}
+
+.tech-confirm-modal .ant-modal-header {
+  background: linear-gradient(90deg, #fff5f5 0%, #fed7d7 50%, #fff5f5 100%) !important;
+  border-bottom: 1px solid var(--tech-error) !important;
+}
+
+.tech-confirm-modal .ant-modal-title {
+  color: var(--tech-error) !important;
+  text-shadow: none !important;
+}
+
+.tech-confirm-modal .ant-modal-body {
+  color: var(--tech-text-primary) !important;
+}
+
+.tech-confirm-modal .ant-modal-footer {
+  background: linear-gradient(90deg, #fff5f5 0%, #fed7d7 50%, #fff5f5 100%) !important;
+  border-top: 1px solid var(--tech-error) !important;
+}
+
+/* 动画效果已移除 */
+
+.tech-glow-animation {
+  /* 原来的动画效果已移除 */
+  /* animation: techGlow 2s ease-in-out infinite; 已移除 */
+  opacity: 1; /* 保持基本样式 */
+}
+
+/* 数据加载效果已移除 */
+
+.tech-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tech-primary), transparent);
+  /* animation: dataStream 1.5s ease-in-out infinite; 已移除 */
+}
+
+/* Emoji 图标优化 - 更新版本 */
+.emoji-icon {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiOne Color", "Twemoji Mozilla", sans-serif !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  font-weight: normal !important;
+  color: initial !important;
+  filter: none !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  background: transparent !important;
+}
