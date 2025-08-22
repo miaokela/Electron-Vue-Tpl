@@ -195,16 +195,6 @@ const users = await window.electronAPI.getUsers();
 
 [MIT License](LICENSE)
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request 来改进这个模板。
-
-## 📧 联系
-
-如有问题或建议，请通过以下方式联系：
-- 提交 GitHub Issue
-- 发送邮件至：[your-email@example.com]
-
 ---
 
 ⭐ 如果这个模板对您有帮助，请给个 Star 支持一下！
